@@ -1,1 +1,1 @@
-console.log("Hello from inside the web page");
+console.log("Hello from outside page");
