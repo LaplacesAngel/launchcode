@@ -1,3 +1,19 @@
 body {
     background-color: rgb(190, 183, 234);
 }
+.main {
+    font-weight: bolder;
+    background-color: aqua;
+}
+div {
+    background-color: blueviolet;
+}
+#meat {
+    background-color: bisque;
+}
+.red {
+    color: red;
+}
+.purple {
+    color: purple;
+}
