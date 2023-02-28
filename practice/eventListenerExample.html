@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Use addEventListener</title>
+   <title>Event Bubbling</title>
+   <style>
+      #toolbar {
+          padding: 20px;
+          border: 1px solid black;
+          background-color:darkcyan;
+      }
+  </style>
 </head>
 <body>
-   <p id="main-text" class="orange" style="font-weight: bold;">
-      a bunch of really valuable text...
-   </p>
-   <button id="ring-button">Ring Bell</button>
+   <div id="toolbar">
+      <button id="ring-button">Ring Bell</button>
+   </div>
    <script>
-      function youRang() {
-         document.getElementById("main-text").innerHTML += "you rang...";
-         console.log("you rang...");
-      }
-      // Obtain a reference to the button element
       let button = document.getElementById("ring-button");
-      // Set named function youRang as the click event handler
-      button.addEventListener("click", youRang);
+      button.addEventListener("click", function (event) {
+          console.log("button clicked");
+          event.stopPropagation();
+      });
+      document.getElementById("toolbar").addEventListener("click", function (event) {
+          console.log("toolbar clicked");
+      });
+      document.addEventListener("click", function (event) {
+          console.log("document clicked");
+      });
    </script>
 </body>
 </html>
