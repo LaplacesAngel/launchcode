@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>French Planets</title>
+        <script>
+            window.addEventListener("load", function(){
+                fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
+                    response.json().then(function(json){
+                        console.log(json);
+                        const destination = document.getElementById("destination");
+                        let index = 0;
+                        destination.addEventListener("click", function(){
+                            destination.innerHTML += `
+                             <div>
+                                <h3>Planet ${json[index].name} Star ${json[index].star} Distance ${json[index].distance}</h3>
+                                <img src = ${json[index].image} height = 250></img>
+                             </div>   
+                             `;
+                            index = (index + 1) % json.length;     
+                        })
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Destinations</h1>
+        <div id="destination">
+            <h3>Planet</h3>
+        </div>
+    </body>
+</html>
