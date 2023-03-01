@@ -6,7 +6,16 @@
          window.addEventListener("load", function() {
             fetch("https://handlers.education.launchcode.org/static/weather.json").then(function(response) {
                response.json().then( function(json) {
-                console.log(json);
+                  console.log("we did it!");
+                  const div = document.getElementById("weather-conditions");
+                     div.innerHTML = `
+                        <ul>
+                           <li>Temp ${json.temp}</li>
+                           <li>Wind Speed ${json.WindSpeed}</li>
+                           <li>Status ${json.status}</li>
+                           <li>Chance of Precip ${json.chanceOfPrecipitation}</li>
+                        </ul>
+                     `;
                }
                )
             });
