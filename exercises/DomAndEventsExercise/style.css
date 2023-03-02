@@ -8,3 +8,8 @@ body {
 p {
     text-align: center;
 }
+#statusReport {
+    text-align: left;
+    font-size: larger;
+    color: blue;
+}
