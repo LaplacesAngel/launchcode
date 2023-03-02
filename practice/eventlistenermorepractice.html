@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Paul's Super Cool addEventListener practice boi main jones</title>
+        <script>
+            window.addEventListener("load", function () {
+                function youRang() {
+                document.getElementById('main-text').innerHTML += 'you know it!!! ';
+                console.log('that dang ole bell twas rang');
+                }
+                function greetFriends(){
+                 document.getElementById("main-text").innerHTML += "boi ";
+                 console.log("added a boi (boi)")
+                }
+                let ring_button = document.getElementById('ring-button');
+                ring_button.addEventListener('click', youRang)
+                let greet_button = document.getElementById('greet-button');
+                greet_button.addEventListener('click', greetFriends);
+            });
+        </script>
+    </head>
+    <body>
+        <p id = 'main-text' class = 'orange' style='font-weight: bold;'>
+            paul's super cool text
+        </p>
+        <button id = 'ring-button'>Ring me</button>
+        <button id = 'greet-button'>Greet yo frens!</button>
+    </body>
+</html>
