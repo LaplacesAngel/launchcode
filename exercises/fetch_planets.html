@@ -5,8 +5,9 @@
         <script>
             window.addEventListener("load", function(){
                 fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response){
+                    console.log(typeof response);
                     response.json().then(function(json){
-                        console.log(json);
+                        console.log(json, typeof json);
                         const destination = document.getElementById("destination");
                         let index = 0;
                         destination.addEventListener("click", function(){
@@ -17,7 +18,7 @@
                              </div>   
                              `;
                             index = (index + 1) % json.length;     
-                        })
+                        });
                     });
                 });
             });

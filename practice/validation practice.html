@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <title>Input validtion son</title>
+        <title>Input validtion son</title>
+        <style>
+            label {display: block;}
+            body {padding: 25px;}
+        </style>
     </head>
     <body>
         <form>
@@ -13,11 +17,12 @@
         <script>
             window.addEventListener("load", function(){
                 let button = document.getElementById("update");
-            //adding event handler when button is clicked
+                //adding event handler when button is clicked
                 button.addEventListener("click", function() {
+                    alert("Are you sure you want to submit this?");
                     let input = document.getElementById("language");
                     console.log(input.value);
-                    input.value += ' rocks! '
+                    input.value += ' rocks! ';
             });
             });
         </script>
