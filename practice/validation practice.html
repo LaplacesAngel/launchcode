@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Input validtion son</title>
+    </head>
+    <body>
+        <form>
+            <label>Language
+                <input type="text" name="language" id="language" value="JavaScript">
+            </label>
+        </form>
+        <button id="update"> Update Input Value</button>
+        <script>
+            window.addEventListener("load", function(){
+                let button = document.getElementById("update");
+            //adding event handler when button is clicked
+                button.addEventListener("click", function() {
+                    let input = document.getElementById("language");
+                    console.log(input.value);
+                    input.value += ' rocks! '
+            });
+            });
+        </script>
+    </body>
+</html>

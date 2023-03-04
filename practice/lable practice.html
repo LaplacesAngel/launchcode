@@ -1,0 +1,92 @@
+<html>
+   <head>
+      <title>Form Example</title>
+      <style>
+        body{
+            padding: 10%;
+        }
+      </style>
+   </head>
+   <body>
+      <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+        <div>language </div>
+        <label>Language
+            <input type="text" name="language" id="language" value="JavaScript">
+         </label>
+        <div>Activities diff name</div>
+            <label>cooking<input type="checkbox" name="cooking"/></label>
+            <label>running<input type="checkbox" name="running"/></label>
+            <label>movies<input type="checkbox" name="movies"/></label>
+        <div>Ingredients same name</div>
+            <label>Onion<input type="checkbox" name="ingredient(s)" value="onion"/></label>
+            <label>Butter<input type="checkbox" name="ingredient(s)" value="butter"/></label>
+            <label>Rice<input type="checkbox" name="ingredient(s)" value="rice"/></label>
+        <div>Paul Town</div>
+            <label>Username <input type="text" name="username"/></label>
+            <br>
+            <label>Team Name <input type="text" name="team"/></label>
+            <br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"/>
+            <br>
+            <label for="newsletter">Sign me up for news letter!</label>
+            <input type="checkbox" name="newsletter" id="newsletter"/>
+            <br>
+            <label for="language">Language</label>
+            <input type="text" id="language" name="languageboi" value="Javascript"/><br>
+            <label for="color">Favorite Color</label>
+            <input type="color" id="color" name="color" value="#e5e5e5"/><br>
+            <label for="textarea">missionDescription</label><br>
+            <textarea name="missionDescription" id="textarea" cols="50" rows="10"></textarea><br>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password"/><br>
+            <label for="date">Date</label>
+            <input type="datetime-local" id="date"><br>
+            <label for="number">Enter a number boi</label>
+            <input type="number" id="number" value="1234" name="Paul's Favorite Number apparently"/><br>
+            <div>Flight Rating:</div>
+            <label>Rough<input type="radio" name="flightRating" value="rough"/></label>
+            <label>Few Bumps<input type="radio" name="flightRating" value="fewBumps"/></label>
+            <label>Smooth<input type="radio" name="flightRating" value="smooth"/></label>
+            <button>Send Report</button><br>
+            How was your trip?<br>
+            <label>Good!<input type="radio" name="trip rating" value="good" id="buttonboi"/></label>
+            <label>Meh<input type="radio" name="trip rating" value="meh" id="buttonboi"/></label>
+            <label>Super Awesome<input type="radio" name="trip rating" value="super awesome" id="buttonboi"/></label>
+            <label>Worst Experience of my life<input type="radio" name="trip rating" value="worst experience of my life" id="buttonboi"/></label>
+            <button>send it boi</button><br>
+            <input type="submit">
+            <div>select forms</div>
+            <label>Operation Code:
+                <!-- includes empty value "Select One" option -->
+                <select name="operation">
+                   <option value="">* Select One *</option>
+                   <option value="Simulation">Simulation</option>
+                   <option value="2">Rocket Test</option>
+                   <option value="3">Crew Related</option>
+                </select>
+                </label><br>
+             <label> Facility:</label>
+                <select name="facility">
+                    <option value="didn't select anything">* Select One *</option>
+                   <option value="johnson">Johnson Space Center, TX</option>
+                   <option value="kennedy">Kennedy Space Center, FL</option>
+                   <option value="white-sands">White Sands Test Facility, NM</option>
+                </select>
+                <button>Send Report</button>
+            </label>
+      </form>
+      <button id="update">Update Input Value</button>
+      <script>
+         let button = document.getElementById("update");
+         // add event handler for when button clicked
+         button.addEventListener("click", function() {
+            let input = document.getElementById("language");
+            console.log(input.value);
+            // now update the value in the input
+            input.value = input.value + " rocks!";
+            console.log(input.value, input);
+         });
+      </script>
+   </body>
+</html>
