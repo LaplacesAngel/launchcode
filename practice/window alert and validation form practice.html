@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Window and form validation practice</title>
+        <style>
+            body {
+                background-color: aliceblue;
+                padding: 10%;
+             }
+            label { display: block;}
+        </style>
+    </head>
+    <script>
+        window.addEventListener("load", function() {
+            let form = document.querySelector("form");
+            form.addEventListener("submit", function(event) {
+                let usernameInput = document.querySelector("input[name=username]");
+                let teamnameInput = document.querySelector("input[name=teamname]");
+                if (teamnameInput.value === "" || usernameInput.value === "") {
+                    alert("All fields are required");
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+    <body>
+        <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+            <label>Username <input type="text" name="username" ></label>
+            <label>Teamname <input type="text" name="teamname"></label>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>

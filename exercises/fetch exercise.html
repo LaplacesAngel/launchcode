@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rocket Simulation</title>
+    <style>
+      label { display: block; margin-bottom: 7px;}
+    </style>
+    <script>
+        window.addEventListener("load", function() {
+            let form = document.querySelector("form");
+            form.addEventListener("submit", function(event){
+                let testName = document.getElementById("testName");
+                let testDate = document.querySelector("input[name='test Date']");
+                let rocketType = document.querySelector("select[name='rocket Type']")
+                console.log(testDate, typeof rocketType);
+                if (testName.value === '' || testDate.value === "" || rocketType.value === "") {
+                    alert("All fields are required");
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+  </head>
+  <body>
+    <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+        <label>Test Name<input type="text" name="testName" id="testName"></label><br>
+        <label>Test Date <input type="date" name="test Date" id="testDate"></label>
+        <label>Rocket Type 
+        <select name="rocket Type">
+            <option value="">*Select one*</option>
+            <option value="Brant">Brant</option>
+            <option value="Lynx">Lynx</option>
+            <option value="Orion">Orion</option>
+            <option value="Terrier">Terrier</option>
+        </select>
+        </label>
+        <label for="">Number of Rocket Boosters <input type="number" name="boosterCount"></label>
+        Wind Rating:
+        <label for="">No Wind<input type="radio" name="windRating" value="0"></label>
+        <label for="">Mild<input type="radio" name="windRating" value="10"></label>
+        <label for="">Strong<input type="radio" name="windRating" value="20"></label>
+        <label for="">Use production grade servers <input type="checkbox" name="productionServers"></label>
+        <button>Run Simulation</button>
+    </form>
+  </body>
+</html>
