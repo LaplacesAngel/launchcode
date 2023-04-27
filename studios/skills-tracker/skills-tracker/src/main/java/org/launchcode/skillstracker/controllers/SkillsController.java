@@ -26,8 +26,9 @@ public class SkillsController {
     @GetMapping("/form")
     @ResponseBody
     public String createForm(){
-        return "<html><body>" +
-                "<form>" +
+        return
+                "<html><body>" +
+                "<form method = 'post'>" +
                 "<label>Name: <br><input type = 'text' name='name' /></label><br><br>" +
 
                 "<label>My number 1 favorite language<br>" +
@@ -50,8 +51,9 @@ public class SkillsController {
                 "   <option value=\"python\">Python</option>" +
                 "   <option value=\"clojure\">Clojure</option>" +
                 "</select></label><br>" +
-                "<br><input type = \"submit\" value = \"Submit!!!!!\" />" +
 
+                "<br>" +
+                "<input type = \"submit\" value = \"Submit!!!!!\" />" +
                 "</body></html>";
     }
 
@@ -59,13 +61,13 @@ public class SkillsController {
     @ResponseBody
     public String respondToFormSubmit(@RequestParam String name,
                                       @RequestParam String firstlang,
-                                      @RequestParam String secondLang,
+                                      @RequestParam String secondlang,
                                       @RequestParam String thirdlang){
         return  "<html><body>" +
                 "<h1>" + name + "</h1>" +
                 "<ol>" +
                 "<li>" + firstlang + "</li>" +
-                "<li>" + secondLang + "</li>" +
+                "<li>" + secondlang + "</li>" +
                 "<li>" + thirdlang + "</li>" +
                 "</ol>" +
                 "</body></html>";
